@@ -142,13 +142,13 @@ export default {
           token,
         });
         console.log("验证token的时效性返回结果：", response);
-        if (response) {
+        if (response&&response.status=="0") {
           this.tokenValidity = true;
           return true;
         } else {
           this.tokenValidity = false;
-          this.$message.error("Token无效或已过期");
-          console.warn("Token无效或已过期。");
+          this.$message.error(response.retMessage);
+          console.warn(response.retMessage);
           return false;
         }
       } catch (error) {

@@ -2,8 +2,6 @@ const packageName = process.env.VUE_APP_PACKAGE_NAME || "HybridApp";
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-console.log(path.resolve(__dirname, './public/favicon.ico'))
-
 module.exports = {
   publicPath: process.env.VUE_APP_PUBLIC_PATH || "/",
   outputDir: packageName,
